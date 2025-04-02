@@ -1,0 +1,13 @@
+<div class="gamesWrapper">
+  @for (item of games; track item.awayName) {<div
+
+    (click)="playersToFollow(item.awayName, item.homeName)"
+    class="card"
+  >
+    <span>{{ item.hour }}</span>
+    <div class="">
+      <img src="{{ item.awayLogo }}" alt="{{ item.awayName }}" />
+      <img src="{{ item.homeLogo }}" alt="{{ item.homeName }}" />
+    </div>
+  </div>}
+</div>

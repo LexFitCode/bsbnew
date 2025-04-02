@@ -1,0 +1,9 @@
+
+@for(item of players; track item.name ){<div
+
+(click)="statsPlayer(item.name)"
+class="playerCard"
+>
+<span class="playerName">{{ item.name }}</span>
+<span class="playerTeam"> {{ item.team }}</span>
+</div>}
