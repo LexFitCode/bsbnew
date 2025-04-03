@@ -1,6 +1,7 @@
 <app-games
 [games]="gamesBsb"
-(newItemEvent)="playersFromGames($event)"></app-games>
+(newItemEvent)="playersFromGames($event)"
+></app-games>
 <div class="playersWrapper">
   <div class="mainWrapper">
     <div class="playersWrapper">
@@ -9,6 +10,7 @@
     <app-player-list
       (newItemEvent)="playerFromPlayer($event)"
       [players]="playersToFollowPersonalData"></app-player-list>
+
   </div>
 </div>
 <div>
