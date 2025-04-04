@@ -8,8 +8,10 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class PlayerListComponent {
   @Input() players: any
-  @Output() newItemEvent = new EventEmitter<string>();
+  @Input() position: any
+  @Output() newItemEvent = new EventEmitter<any>();
   statsPlayer(name:string){
-    this.newItemEvent.emit(name)
+
+    this.newItemEvent.emit({name: name, position: this.position})
   }
 }

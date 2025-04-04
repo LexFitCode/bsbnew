@@ -10,8 +10,8 @@ import { PlayersService } from '../../services/players.service';
 export class GamesComponent implements OnInit{
   @Input() games: any
   @Output() newItemEvent = new EventEmitter<any>();
-  playersToFollowPersonalData: any[] = [];
-  playersToFollowPersonalDataHitters: any[] = [];
+
+  playersToFollowPersonalData: any = {};
   playersIcons: any= []
   playersIconsHitter: any = []
   constructor(private PlayersService: PlayersService) { }
@@ -34,13 +34,16 @@ export class GamesComponent implements OnInit{
   }
   playersToFollow(home: string, away: string) {
     console.log(home, away)
-    this.playersToFollowPersonalData = [];
+    this.playersToFollowPersonalData = {}
+    this.playersToFollowPersonalData.hitters = []
+    this.playersToFollowPersonalData.pitchers = []
+
     const names = this.playersIcons;
     for (const property in names) {
       const team = names[property].team;
       if (home !== undefined || away !== undefined) {
         if (team?.includes(home) || team?.includes(away)) {
-          this.playersToFollowPersonalData.push(names[property]);
+          this.playersToFollowPersonalData.pitchers.push(names[property]);
         }
       }
     }
@@ -49,7 +52,7 @@ export class GamesComponent implements OnInit{
       const team = names2[property].team;
       if (home !== undefined || away !== undefined) {
         if (team?.includes(home) || team?.includes(away)) {
-          this.playersToFollowPersonalData.push(names2[property]);
+          this.playersToFollowPersonalData.hitters.push(names2[property]);
         }
       }
     }

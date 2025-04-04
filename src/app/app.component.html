@@ -2,26 +2,36 @@
 [games]="gamesBsb"
 (newItemEvent)="playersFromGames($event)"
 ></app-games>
-<div class="playersWrapper">
   <div class="mainWrapper">
     <div class="playersWrapper">
 
 
-    <app-player-list
-      (newItemEvent)="playerFromPlayer($event)"
-      [players]="playersToFollowPersonalData"></app-player-list>
+      <app-player-list
+        (newItemEvent)="playerFromPlayer($event)"
+        [players]="playersToFollowPersonalDataHitters"
+        [position]="hitter"></app-player-list>
 
-  </div>
-</div>
-<div>
-  <div>
-    <h2 >{{ namePlayer }}</h2>
-  </div>
-  <div class="statsWrapper">
-    <app-player-data
+    </div>
+
+    <div class="playersWrapper">
+      <h2 >{{ namePlayer }} {{position}}</h2>
+      <app-player-data
+      [team] = "team"
+      [oddData] = "oddData"
+      [position] = "position"
+      [name] = "namePlayer"
+      [odds]="playerOddsB"
+      [namePlayer]="namePlayer"
       ></app-player-data>
+    </div>
 
-  </div>
+    <div class="playersWrapper">
 
-</div>
-  </div>
+
+      <app-player-list
+        (newItemEvent)="playerFromPlayer($event)"
+        [players]="playersToFollowPersonalDataPitchers"
+        [position]="pitcher"></app-player-list>
+
+    </div>
+  <div>
