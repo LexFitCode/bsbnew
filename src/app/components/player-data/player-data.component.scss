@@ -38,10 +38,11 @@ border: 1px solid rgba(133,158,118,0.25);
 }
 
 .oddsWrapper{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(100px, 330px));
+}
+.oddsWrapper{
+  flex-direction: row;
 }
 
 .oddsButton{
