@@ -1,0 +1,5 @@
+<mat-radio-group aria-label="Select an option">
+  @for (season of positions; track season) {
+    <mat-radio-button class="example-radio-button" [value]="season" (change)="statsPlayer(season)">{{season}}</mat-radio-button>
+  }
+</mat-radio-group>

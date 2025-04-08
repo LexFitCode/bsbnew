@@ -1,21 +1,21 @@
-<app-games
-[games]="gamesBsb"
-(newItemEvent)="playersFromGames($event)"
-></app-games>
-  <div class="mainWrapper">
-    <div class="playersWrapper">
+@if(!this.mobile){
+  <app-games
+  [games]="gamesBsb"
+  (newItemEvent)="playersFromGames($event)"
+  [mobile]="mobile"
+  ></app-games>
+  @if(showSelect){<app-select-position
+  (newItemEvent)="playersToShow($event)"
+    ></app-select-position>}
 
-
-      <app-player-list
+     <app-player-list
         (newItemEvent)="playerFromPlayer($event)"
-        [players]="playersToFollowPersonalDataHitters"
-        [position]="hitter"></app-player-list>
-
-    </div>
-
+        [players]="playersToFollowPersonalData"
+        [position]="position"></app-player-list>
     <div class="playersWrapper">
       <h2 >{{ namePlayer }} {{position}}</h2>
       <app-player-data
+      [versus]="vs"
       [team] = "team"
       [oddData] = "oddData"
       [position] = "position"
@@ -24,14 +24,31 @@
       [namePlayer]="namePlayer"
       ></app-player-data>
     </div>
+}
 
-    <div class="playersWrapper">
+@if(this.mobile){
+  <app-games
+  [games]="gamesBsb"
+  (newItemEvent)="playersFromGames($event)"
+  [mobile]="mobile"
+  ></app-games>
+  @if(showSelect){<app-select-position
+(newItemEvent)="playersToShow($event)"></app-select-position>}
+  <app-player-list
+  (newItemEvent)="playerFromPlayer($event)"
+  [players]="playersToFollowPersonalData"
+  [position]="position"
+  [mobile]="mobile"></app-player-list>
+  <app-player-data
+  [versus]="vs"
+  [team] = "team"
+  [oddData] = "oddData"
+  [position] = "position"
+  [name] = "namePlayer"
+  [odds]="playerOddsB"
+  [namePlayer]="namePlayer"
+  ></app-player-data>
+}
 
 
-      <app-player-list
-        (newItemEvent)="playerFromPlayer($event)"
-        [players]="playersToFollowPersonalDataPitchers"
-        [position]="pitcher"></app-player-list>
 
-    </div>
-  <div>

@@ -39,10 +39,7 @@ border: 1px solid rgba(133,158,118,0.25);
 
 .oddsWrapper{
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(100px, 330px));
-}
-.oddsWrapper{
-  flex-direction: row;
+  grid-template-columns: repeat(auto-fit,minmax(300px, 360px));
 }
 
 .oddsButton{
@@ -99,6 +96,7 @@ border: 1px solid rgba(133,158,118,0.25);
 }
 
 
+
 .gamesData{
   display: flex;
 
@@ -115,4 +113,25 @@ border: 1px solid rgba(133,158,118,0.25);
   display: flex;
   border: 1px solid rgba(133,158,118,0.40);
   border-radius: 20px;
+}
+
+.gamesDataPitcher{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dataPitcher{
+  display: block;
+text-align: center;
+padding: 5px;
+}
+.displayOdds{
+  display: flex;
+}
+@media only screen and (max-width: 415px) {
+  .oddsButton{
+
+    width: 90vw;
+}
+
 }

@@ -1,8 +1,10 @@
 import { Component, Input } from '@angular/core';
+import { PlayerStatsComponent } from '../player-stats/player-stats.component';
+import { PlayerStatsHitterComponent } from '../player-stats-hitter/player-stats-hitter.component';
 
 @Component({
   selector: 'app-player-data',
-  imports: [],
+  imports: [ PlayerStatsComponent, PlayerStatsHitterComponent],
   templateUrl: './player-data.component.html',
   styleUrl: './player-data.component.scss'
 })
@@ -13,7 +15,7 @@ export class PlayerDataComponent {
   @Input() odds: any
   @Input() namePlayer: any
   @Input() team: any
-
+  @Input() versus: any
   showOdds(odd: any){
     console.log(odd)
     this.oddData = []

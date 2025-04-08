@@ -9,6 +9,7 @@ import { PlayersService } from '../../services/players.service';
 })
 export class GamesComponent implements OnInit{
   @Input() games: any
+  @Input() mobile: any
   @Output() newItemEvent = new EventEmitter<any>();
 
   playersToFollowPersonalData: any = {};

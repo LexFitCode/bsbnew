@@ -1,0 +1,39 @@
+<div class="oddsButton">
+  <div>
+    {{ stats.market }}
+  </div>
+  <div class="oddsWrapperData">
+    <div class="dataPitcher">{{ stats.line }}</div>
+    <div class="displayOdds">
+      <div class="dataPitcher">
+        <span class="dataPitcher"> +</span>
+        <span class="dataPitcher">
+          {{ stats.overOdd }}
+        </span>
+      </div>
+      <div class="dataPitcher"><span class="dataPitcher"> -</span>
+        <span class="dataPitcher">
+          {{  stats.underOdd }}
+        </span></div>
+    </div>
+  </div>
+  <div class="gamesData">
+    <div>{{ stats.games?.game1 }}</div>
+    <div>{{ stats.games?.game2 }}</div>
+    <div>{{ stats.games?.game3 }}</div>
+    <div>{{ stats.games?.game4 }}</div>
+    <div>{{ stats.games?.game5 }}</div>
+  </div>
+  <div class="gamesDataPitcher">
+    <div>
+      <span class="dataPitcher">Vs {{versus.rival}}</span>
+      <span class="dataPitcher">{{ stats.vsPitcher?.games }}</span>
+      <span class="dataPitcher">{{ stats.vsPitcher?.stats }}</span>
+    </div>
+    <div>
+      <span class="dataPitcher">Vs {{versus.throw}}</span>
+      <span class="dataPitcher">{{ stats.vsPitcherThrow?.games }}</span>
+      <span class="dataPitcher">{{ stats.vsPitcherThrow?.stats }}</span>
+    </div>
+  </div>
+</div>

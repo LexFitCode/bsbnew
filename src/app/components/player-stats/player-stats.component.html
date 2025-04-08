@@ -1,0 +1,40 @@
+<div class="oddsButton">
+  <div>
+    {{ market }}
+  </div>
+  <div class="oddsWrapperData">
+    <div class="dataPitcher">{{ a }}</div>
+    <div class="displayOdds">
+      <div class="dataPitcher">
+        <span class="dataPitcher"> +</span>
+        <span class="dataPitcher">
+          {{ over }}
+        </span>
+      </div>
+      <div class="dataPitcher"><span class="dataPitcher"> -</span>
+        <span class="dataPitcher">
+          {{  under }}
+        </span></div>
+    </div>
+  </div>
+  <div class="gamesData">
+    <div>{{ games?.game1 }}</div>
+    <div>{{ games?.game2 }}</div>
+    <div>{{ games?.game3 }}</div>
+    <div>{{ games?.game4 }}</div>
+    <div>{{ games?.game5 }}</div>
+  </div>
+  <div class="gamesData">
+    @if (gamesVs?.game1 !== ""){
+    <div>{{ gamesVs?.game1 }}</div>
+    } @if (gamesVs?.game2 !== ""){
+    <div>{{ gamesVs?.game2 }}</div>
+    } @if (gamesVs?.game3 !== ""){
+    <div>{{ gamesVs?.game3 }}</div>
+    } @if (gamesVs?.game4 !== ""){
+    <div>{{ gamesVs?.game4 }}</div>
+    } @if (gamesVs?.game5 !== ""){
+    <div>{{ gamesVs?.game5 }}</div>
+    }
+  </div>
+</div>

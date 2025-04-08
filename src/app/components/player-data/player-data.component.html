@@ -1,385 +1,104 @@
 @if (position === "pitcher") {
 <div class="oddsWrapper">
-  <div>
     @if (odds.strikeOuts !== undefined) {
-    <div class="oddsButton">
-      <div>
-        {{ odds.strikeOuts?.market }}
-      </div>
-      <div class="oddsWrapperData">
-        <div>{{ odds.strikeOuts?.line }}</div>
-        <div>+ {{ odds.strikeOuts?.overOdd }}</div>
-        <div>- {{ odds.strikeOuts?.underOdd }}</div>
-      </div>
-      <div class="gamesData">
-        <div>{{ odds.strikeOuts?.games?.game1 }}</div>
-        <div>{{ odds.strikeOuts?.games?.game2 }}</div>
-        <div>{{ odds.strikeOuts?.games?.game3 }}</div>
-        <div>{{ odds.strikeOuts?.games?.game4 }}</div>
-        <div>{{ odds.strikeOuts?.games?.game5 }}</div>
-      </div>
-      <div class="gamesData">
-        @if (odds.strikeOuts?.gamesVs?.game1 !== ""){
-        <div>{{ odds.strikeOuts?.gamesVs?.game1 }}</div>
-        } @if (odds.strikeOuts?.gamesVs?.game2 !== ""){
-        <div>{{ odds.strikeOuts?.gamesVs?.game2 }}</div>
-        } @if (odds.strikeOuts?.gamesVs?.game3 !== ""){
-        <div>{{ odds.strikeOuts?.gamesVs?.game3 }}</div>
-        } @if (odds.strikeOuts?.gamesVs?.game4 !== ""){
-        <div>{{ odds.strikeOuts?.gamesVs?.game4 }}</div>
-        } @if (odds.strikeOuts?.gamesVs?.game5 !== ""){
-        <div>{{ odds.strikeOuts?.gamesVs?.game5 }}</div>
-        }
-      </div>
-    </div>
+        <app-player-stats
+        [a]="odds.strikeOuts?.line"
+        [market]="odds.strikeOuts?.market"
+        [games]="odds.strikeOuts?.games"
+        [over]="odds.strikeOuts?.overOdd"
+        [under]="odds.strikeOuts?.underOdd"
+        [games]="odds.strikeOuts?.games"
+        [gamesVs]="odds.strikeOuts?.gamesVs"
+        ></app-player-stats>
     } @if (odds.hitsAllowed !== undefined) {
-    <div class="oddsButton">
-      <div>
-        {{ odds.hitsAllowed?.market }}
-      </div>
-      <div class="oddsWrapperData">
-        <div>{{ odds.hitsAllowed?.line }}</div>
-        <div>+ {{ odds.hitsAllowed?.overOdd }}</div>
-        <div>- {{ odds.hitsAllowed?.underOdd }}</div>
-      </div>
-      <div class="gamesData">
-        <div>{{ odds.hitsAllowed?.games?.game1 }}</div>
-        <div>{{ odds.hitsAllowed?.games?.game2 }}</div>
-        <div>{{ odds.hitsAllowed?.games?.game3 }}</div>
-        <div>{{ odds.hitsAllowed?.games?.game4 }}</div>
-        <div>{{ odds.hitsAllowed?.games?.game5 }}</div>
-      </div>
-      <div class="gamesData">
-        @if (odds.hitsAllowed?.gamesVs?.game1 !== ""){
-        <div>{{ odds.hitsAllowed?.gamesVs?.game1 }}</div>
-        } @if (odds.hitsAllowed?.gamesVs?.game2 !== ""){
-        <div>{{ odds.hitsAllowed?.gamesVs?.game2 }}</div>
-        } @if (odds.hitsAllowed?.gamesVs?.game3 !== ""){
-        <div>{{ odds.hitsAllowed?.gamesVs?.game3 }}</div>
-        } @if (odds.hitsAllowed?.gamesVs?.game4 !== ""){
-        <div>{{ odds.hitsAllowed?.gamesVs?.game4 }}</div>
-        } @if (odds.hitsAllowed?.gamesVs?.game5 !== ""){
-        <div>{{ odds.hitsAllowed?.gamesVs?.game5 }}</div>
-        }
-      </div>
-    </div>
+      <app-player-stats
+      [a]="odds.hitsAllowed?.line"
+      [market]="odds.hitsAllowed?.market"
+      [games]="odds.hitsAllowed?.games"
+      [over]="odds.hitsAllowed?.overOdd"
+      [under]="odds.hitsAllowed?.underOdd"
+      [games]="odds.hitsAllowed?.games"
+      [gamesVs]="odds.hitsAllowed?.gamesVs"
+      ></app-player-stats>
     }
-  </div>
-  <div>
+
     @if (odds.baseXBolas !== undefined) {
-    <div class="oddsButton">
-      <div>
-        {{ odds.baseXBolas?.market }}
-      </div>
-      <div class="oddsWrapperData">
-        <div>{{ odds.baseXBolas?.line }}</div>
-        <div>+ {{ odds.baseXBolas?.overOdd }}</div>
-        <div>- {{ odds.baseXBolas?.underOdd }}</div>
-      </div>
-      <div class="gamesData">
-        <div>{{ odds.baseXBolas?.games?.game1 }}</div>
-        <div>{{ odds.baseXBolas?.games?.game2 }}</div>
-        <div>{{ odds.baseXBolas?.games?.game3 }}</div>
-        <div>{{ odds.baseXBolas?.games?.game4 }}</div>
-        <div>{{ odds.baseXBolas?.games?.game5 }}</div>
-      </div>
-      <div class="gamesData">
-        @if (odds.baseXBolas?.gamesVs?.game1 !== ""){
-        <div>{{ odds.baseXBolas?.gamesVs?.game1 }}</div>
-        } @if (odds.baseXBolas?.gamesVs?.game2 !== ""){
-        <div>{{ odds.baseXBolas?.gamesVs?.game2 }}</div>
-        } @if (odds.baseXBolas?.gamesVs?.game3 !== ""){
-        <div>{{ odds.baseXBolas?.gamesVs?.game3 }}</div>
-        } @if (odds.baseXBolas?.gamesVs?.game4 !== ""){
-        <div>{{ odds.baseXBolas?.gamesVs?.game4 }}</div>
-        } @if (odds.baseXBolas?.gamesVs?.game5 !== ""){
-        <div>{{ odds.baseXBolas?.gamesVs?.game5 }}</div>
-        }
-      </div>
-    </div>
+      <app-player-stats
+      [a]="odds.baseXBolas?.line"
+      [market]="odds.baseXBolas?.market"
+      [games]="odds.baseXBolas?.games"
+      [over]="odds.baseXBolas?.overOdd"
+      [under]="odds.baseXBolas?.underOdd"
+      [games]="odds.baseXBolas?.games"
+      [gamesVs]="odds.baseXBolas?.gamesVs"
+      ></app-player-stats>
     } @if (odds.earnedRuns !== undefined) {
-    <div class="oddsButton">
-      <div>
-        {{ odds.earnedRuns?.market }}
-      </div>
-      <div class="oddsWrapperData">
-        <div>{{ odds.baseXBolas?.line }}</div>
-        <div>+ {{ odds.earnedRuns?.overOdd }}</div>
-        <div>- {{ odds.earnedRuns?.underOdd }}</div>
-      </div>
-      <div class="gamesData">
-        <div>{{ odds.earnedRuns?.games?.game1 }}</div>
-        <div>{{ odds.earnedRuns?.games?.game2 }}</div>
-        <div>{{ odds.earnedRuns?.games?.game3 }}</div>
-        <div>{{ odds.earnedRuns?.games?.game4 }}</div>
-        <div>{{ odds.earnedRuns?.games?.game5 }}</div>
-      </div>
-      <div class="gamesData">
-        @if (odds.earnedRuns?.gamesVs?.game1 !== ""){
-        <div>{{ odds.earnedRuns?.gamesVs?.game1 }}</div>
-        } @if (odds.earnedRuns?.gamesVs?.game2 !== ""){
-        <div>{{ odds.earnedRuns?.gamesVs?.game2 }}</div>
-        } @if (odds.earnedRuns?.gamesVs?.game3 !== ""){
-        <div>{{ odds.earnedRuns?.gamesVs?.game3 }}</div>
-        } @if (odds.earnedRuns?.gamesVs?.game4 !== ""){
-        <div>{{ odds.earnedRuns?.gamesVs?.game4 }}</div>
-        } @if (odds.earnedRuns?.gamesVs?.game5 !== ""){
-        <div>{{ odds.earnedRuns?.gamesVs?.game5 }}</div>
-        }
-      </div>
-    </div>
+      <app-player-stats
+      [a]="odds.earnedRuns?.line"
+      [market]="odds.earnedRuns?.market"
+      [games]="odds.earnedRuns?.games"
+      [over]="odds.earnedRuns?.overOdd"
+      [under]="odds.earnedRuns?.underOdd"
+      [games]="odds.earnedRuns?.games"
+      [gamesVs]="odds.earnedRuns?.gamesVs"
+      ></app-player-stats>
     }
-  </div>
 </div>
 } @else if (position === "hitter") {
 <div class="oddsWrapper">
-
-
   @if (odds.hits !== undefined) {
-  <div class="oddsButton">
-    <div>
-      {{ odds.hits?.market }}
-    </div>
-    <div class="oddsWrapperData">
-      <div>{{ odds.hits?.line }}</div>
-      <div>+ {{ odds.hits?.overOdd }}</div>
-      <div>- {{ odds.hits?.underOdd }}</div>
-    </div>
-    <div class="gamesData">
-      <div>{{ odds.hits?.games?.game1 }}</div>
-      <div>{{ odds.hits?.games?.game2 }}</div>
-      <div>{{ odds.hits?.games?.game3 }}</div>
-      <div>{{ odds.hits?.games?.game4 }}</div>
-      <div>{{ odds.hits?.games?.game5 }}</div>
-    </div>
-    <div class="gamesData">
-      <div>
-        <div>Vs Rival</div>
-        <div>{{ odds.hits?.vsPitcher?.games }}</div>
-        <div>{{ odds.hits?.vsPitcher?.stats }}</div>
-      </div>
-      <div>
-        <div>Vs perfil</div>
-        <div>{{ odds.hits?.vsPitcherThrow?.games }}</div>
-        <div>{{ odds.hits?.vsPitcherThrow?.stats }}</div>
-      </div>
-    </div>
-  </div>
+    <app-player-stats-hitter
+    [stats] = "odds.hits"
+    [versus]="versus">
+    </app-player-stats-hitter>
   }
   @if (odds.homeRun !== undefined) {
-  <div class="oddsButton">
-    <div>
-      {{ odds.homeRun?.market }}
-    </div>
-    <div class="oddsWrapperData">
-      <div>{{ odds.homeRun?.line }}</div>
-      <div>+ {{ odds.homeRun?.overOdd }}</div>
-      <div>- {{ odds.homeRun?.underOdd }}</div>
-    </div>
-    <div class="gamesData">
-      <div>{{ odds.homeRun?.games?.game1 }}</div>
-      <div>{{ odds.homeRun?.games?.game2 }}</div>
-      <div>{{ odds.homeRun?.games?.game3 }}</div>
-      <div>{{ odds.homeRun?.games?.game4 }}</div>
-      <div>{{ odds.homeRun?.games?.game5 }}</div>
-    </div>
-    <div class="gamesData">
-      <div>
-        <div>Vs Rival</div>
-        <div>{{ odds.homeRun?.vsPitcher?.games }}</div>
-        <div>{{ odds.homeRun?.vsPitcher?.stats }}</div>
-      </div>
-      <div>
-        <div>Vs perfil</div>
-        <div>{{ odds.homeRun?.vsPitcherThrow?.games }}</div>
-        <div>{{ odds.homeRun?.vsPitcherThrow?.stats }}</div>
-      </div>
-    </div>
-  </div>
+    <app-player-stats-hitter
+    [stats] = "odds.homeRun"
+    [versus]="versus">
+    </app-player-stats-hitter>
   }
 
 
 
 
   @if (odds.rbi !== undefined) {
-  <div class="oddsButton">
-    <div>
-      {{ odds.rbi?.market }}
-    </div>
-    <div class="oddsWrapperData">
-      <div>{{ odds.rbi?.line }}</div>
-      <div>+ {{ odds.rbi?.overOdd }}</div>
-      <div>- {{ odds.rbi?.underOdd }}</div>
-    </div>
-    <div class="gamesData">
-      <div>{{ odds.rbi?.games?.game1 }}</div>
-      <div>{{ odds.rbi?.games?.game2 }}</div>
-      <div>{{ odds.rbi?.games?.game3 }}</div>
-      <div>{{ odds.rbi?.games?.game4 }}</div>
-      <div>{{ odds.rbi?.games?.game5 }}</div>
-    </div>
-    <div class="gamesData">
-      <div>
-        <div>Vs Rival</div>
-        <div>{{ odds.rbi?.vsPitcher?.games }}</div>
-        <div>{{ odds.rbi?.vsPitcher?.stats }}</div>
-      </div>
-      <div>
-        <div>Vs perfil</div>
-        <div>{{ odds.rbi?.vsPitcherThrow?.games }}</div>
-        <div>{{ odds.rbi?.vsPitcherThrow?.stats }}</div>
-      </div>
-    </div>
-  </div>
+    <app-player-stats-hitter
+    [stats] = "odds.rbi"
+    [versus]="versus">
+    </app-player-stats-hitter>
   }
   @if (odds.stolenBases !== undefined) {
-  <div class="oddsButton">
-    <div>
-      {{ odds.stolenBases?.market }}
-    </div>
-    <div class="oddsWrapperData">
-      <div>{{ odds.stolenBases?.line }}</div>
-      <div>+ {{ odds.stolenBases?.overOdd }}</div>
-      <div>- {{ odds.stolenBases?.underOdd }}</div>
-    </div>
-    <div class="gamesData">
-      <div>{{ odds.stolenBases?.games?.game1 }}</div>
-      <div>{{ odds.stolenBases?.games?.game2 }}</div>
-      <div>{{ odds.stolenBases?.games?.game3 }}</div>
-      <div>{{ odds.stolenBases?.games?.game4 }}</div>
-      <div>{{ odds.stolenBases?.games?.game5 }}</div>
-    </div>
-    <div class="gamesData">
-      <div>
-        <div>Vs Rival</div>
-        <div>{{ odds.stolenBases?.vsPitcher?.games }}</div>
-        <div>{{ odds.stolenBases?.vsPitcher?.stats }}</div>
-      </div>
-      <div>
-        <div>Vs perfil</div>
-        <div>{{ odds.stolenBases?.vsPitcherThrow?.games }}</div>
-        <div>{{ odds.stolenBases?.vsPitcherThrow?.stats }}</div>
-      </div>
-    </div>
-  </div>
+    <app-player-stats-hitter
+    [stats] = "odds.stolenBases"
+    [versus]="versus">
+    </app-player-stats-hitter>
   }
 
   @if (odds.bb !== undefined) {
-  <div class="oddsButton">
-    <div>
-      {{ odds.bb?.market }}
-    </div>
-    <div class="oddsWrapperData">
-      <div>{{ odds.bb?.line }}</div>
-      <div>+ {{ odds.bb?.overOdd }}</div>
-      <div>- {{ odds.bb?.underOdd }}</div>
-    </div>
-    <div class="gamesData">
-      <div>{{ odds.bb?.games?.game1 }}</div>
-      <div>{{ odds.bb?.games?.game2 }}</div>
-      <div>{{ odds.bb?.games?.game3 }}</div>
-      <div>{{ odds.bb?.games?.game4 }}</div>
-      <div>{{ odds.bb?.games?.game5 }}</div>
-    </div>
-    <div>
-      <div>Contra pitcher Rival</div>
-      <div>{{ odds.bb?.vsPitcher?.games }}</div>
-      <div>{{ odds.strikebbOut?.vsPitcher?.stats }}</div>
-    </div>
-    <div>
-      <div>Contra perfil del pitcher Rival</div>
-      <div>{{ odds.bb?.vsPitcherThrow?.games }}</div>
-      <div>{{ odds.bb?.vsPitcherThrow?.stats }}</div>
-    </div>
-  </div>
+    <app-player-stats-hitter
+    [stats] = "odds.bb"
+    [versus]="versus">
+    </app-player-stats-hitter>
   }
   @if (odds.hrr !== undefined) {
-  <div class="oddsButton">
-    <div>
-      {{ odds.hrr?.market }}
-    </div>
-    <div class="oddsWrapperData">
-      <div>{{ odds.hrr?.line }}</div>
-      <div>+ {{ odds.hrr?.overOdd }}</div>
-      <div>- {{ odds.hrr?.underOdd }}</div>
-    </div>
-    <div class="gamesData">
-      <div>{{ odds.hrr?.games?.game1 }}</div>
-      <div>{{ odds.hrr?.games?.game2 }}</div>
-      <div>{{ odds.hrr?.games?.game3 }}</div>
-      <div>{{ odds.hrr?.games?.game4 }}</div>
-      <div>{{ odds.hrr?.games?.game5 }}</div>
-    </div>
-    <div>
-      <div>Contra pitcher Rival</div>
-      <div>{{ odds.hrr?.vsPitcher?.games }}</div>
-      <div>{{ odds.hrr?.vsPitcher?.stats }}</div>
-    </div>
-    <div>
-      <div>Contra perfil del pitcher Rival</div>
-      <div>{{ odds.hrr?.vsPitcherThrow?.games }}</div>
-      <div>{{ odds.hrr?.vsPitcherThrow?.stats }}</div>
-    </div>
-  </div>
+    <app-player-stats-hitter
+    [stats] = "odds.hrr"
+    [versus]="versus">
+    </app-player-stats-hitter>
   }
 
   @if (odds.carreras !== undefined) {
-  <div class="oddsButton">
-    <div>
-      {{ odds.carreras?.market }}
-    </div>
-    <div class="oddsWrapperData">
-      <div>{{ odds.carreras?.line }}</div>
-      <div>+ {{ odds.carreras?.overOdd }}</div>
-      <div>- {{ odds.carreras?.underOdd }}</div>
-    </div>
-    <div class="gamesData">
-      <div>{{ odds.carreras?.games?.game1 }}</div>
-      <div>{{ odds.carreras?.games?.game2 }}</div>
-      <div>{{ odds.carreras?.games?.game3 }}</div>
-      <div>{{ odds.carreras?.games?.game4 }}</div>
-      <div>{{ odds.carreras?.games?.game5 }}</div>
-    </div>
-    <div>
-      <div>Contra pitcher Rival</div>
-      <div>{{ odds.carreras?.vsPitcher?.games }}</div>
-      <div>{{ odds.carreras?.vsPitcher?.stats }}</div>
-    </div>
-    <div>
-      <div>Contra perfil del pitcher Rival</div>
-      <div>{{ odds.carreras?.vsPitcherThrow?.games }}</div>
-      <div>{{ odds.carreras?.vsPitcherThrow?.stats }}</div>
-    </div>
-  </div>
+    <app-player-stats-hitter
+    [stats] = "odds.carreras"
+    [versus]="versus">
+    </app-player-stats-hitter>
   }
-   @if (odds.strikeOut !== undefined) {
-  <div class="oddsButton">
-    <div>
-      {{ odds.strikeOut?.market }}
-    </div>
-    <div class="oddsWrapperData">
-      <div>{{ odds.strikeOut?.line }}</div>
-      <div>+ {{ odds.strikeOut?.overOdd }}</div>
-      <div>- {{ odds.strikeOut?.underOdd }}</div>
-    </div>
-    <div class="gamesData">
-      <div>{{ odds.strikeOut?.games?.game1 }}</div>
-      <div>{{ odds.strikeOut?.games?.game2 }}</div>
-      <div>{{ odds.strikeOut?.games?.game3 }}</div>
-      <div>{{ odds.strikeOut?.games?.game4 }}</div>
-      <div>{{ odds.strikeOut?.games?.game5 }}</div>
-    </div>
-    <div>
-      <div>Contra pitcher Rival</div>
-      <div>{{ odds.strikeOut?.vsPitcher?.games }}</div>
-      <div>{{ odds.strikeOut?.vsPitcher?.stats }}</div>
-    </div>
-    <div>
-      <div>Contra perfil del pitcher Rival</div>
-      <div>{{ odds.strikeOut?.vsPitcherThrow?.games }}</div>
-      <div>{{ odds.strikeOut?.vsPitcherThrow?.stats }}</div>
-    </div>
-  </div>
+   @if (odds.sohitter !== undefined) {
+    <app-player-stats-hitter
+    [stats] = "odds.sohitter"
+    [versus]="versus">
+    </app-player-stats-hitter>
   }
 </div>
 }

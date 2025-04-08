@@ -1,13 +1,30 @@
-<div class="gamesWrapper">
+@if(!this.mobile){<div class="gamesWrapper">
   @for (item of games; track item.awayName) {<div
 
     (click)="playersToFollow(item.awayName, item.homeName)"
     class="card"
-  >
+  ><span>{{mobile}}</span>
     <span>{{ item.hour }}</span>
     <div class="">
       <img src="{{ item.awayLogo }}" alt="{{ item.awayName }}" />
       <img src="{{ item.homeLogo }}" alt="{{ item.homeName }}" />
     </div>
   </div>}
-</div>
+</div>}
+
+@if(this.mobile){
+  <div class="horizontal-scroll-wrapper ">
+    @for (item of games; track item.awayName) {<div
+
+      (click)="playersToFollow(item.awayName, item.homeName)"
+      class="cardMobile"
+    >
+      <span>{{ item.hour }}</span>
+      <div class="">
+        <img src="{{ item.awayLogo }}" alt="{{ item.awayName }}" />
+        <img src="{{ item.homeLogo }}" alt="{{ item.homeName }}" />
+      </div>
+    </div>}
+  </div>
+
+}

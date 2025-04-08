@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
+
 @Component({
   selector: 'app-player-list',
   imports: [],
@@ -9,9 +10,15 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class PlayerListComponent {
   @Input() players: any
   @Input() position: any
-  @Output() newItemEvent = new EventEmitter<any>();
-  statsPlayer(name:string){
+  @Input() mobile: any
 
+  @Output() newItemEvent = new EventEmitter<any>();
+  selectedValue: string = "";
+  selectedCar: string = "";
+  statsPlayer(name:string){
+    console.log(name)
     this.newItemEvent.emit({name: name, position: this.position})
   }
+
+
 }
